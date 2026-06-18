@@ -3,6 +3,7 @@
 *Nome do Grupo:* AP3-02208A-Grupo-B
 
 ### Nome dos Alunos:
+* Ester de Freitas Brizolla (24207925)
 * Eduardo Campos St Clair Smallwood (23104293)
 * Carlos Henrique D'Avila Carvalho (24100810)
 * Leonardo de Oliveira Santana (24200512)
