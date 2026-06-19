@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
--- Bloco de Controle (BC) do circuito SAD.
+-- Bloco de Controle (BC) do circuito CORDIC.
 -- Responsável por gerar os sinais de controle para o bloco operativo (BO),
 -- geralmente por meio de uma FSM.
 
@@ -39,7 +39,7 @@ architecture behavior of cordic_bc is
 	signal estadoAtual, proximoEstado : tipo_Estado;
 begin
     -- Preencher aqui (remova este comentário).
-    -- Descreva a FSM responsável por coordenar o circuito SAD.
+    -- Descreva a FSM responsável por coordenar o circuito CORDIC.
     
     State: process (clk, reset)
     begin
