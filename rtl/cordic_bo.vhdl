@@ -35,7 +35,7 @@ architecture structure OF cordic_bo is
     constant K_CONST : std_logic_vector(15 downto 0) := "0010011011011101";
     constant ZERO_16 : std_logic_vector(15 downto 0) := "0000000000000000";
 
-    --Bloco contador de iterações
+    --Bloco contador de iteraÃ§Ãµes
     signal out_mux_i          : std_logic_vector(4 downto 0);
     signal out_reg_i          : std_logic_vector(4 downto 0);
     signal out_add_i          : std_logic_vector(4 downto 0);
@@ -47,10 +47,13 @@ architecture structure OF cordic_bo is
     signal out_shift_x        : std_logic_vector(15 downto 0);
 
     --Bloco de calculo do seno
-    signal out_shift_y        : std_logic_vector(15 downto 0);
+    signal out_mux_y          : std_logic_vector(15 downto 0);
+    signal out_reg_y          : std_logic_vector(15 downto 0);
+    signal out_add_sub_y          : std_logic_vector(15 downto 0);
+    signal out_shift_y      : std_logic_vector(15 downto 0);
 
 begin
-    --Contador de iterações
+    --Contador de iteraÃ§Ãµes
     mux_i: entity work.mux_2to1(behavior)
         generic map (N => 5 )
         port map (in_1=> "00000", in_0 => out_add_i, sel => zi, y => out_mux_i);
@@ -78,5 +81,26 @@ begin
     shift_x: entity work.deslocador(behavior)
         generic map (N => 16, S => 5)
         port map (dado_in => out_reg_x, shift_valor => out_reg_i, dado_out => out_shift_x);
+
+    ---- Bloco de calculo do seno
+        mux_y:entity work.mux_2to1(behavior)
+        generic map (N => 16)
+        port map (in_1 => ZERO_16 , in_0 => out_add_sub_y  , sel => init_sel , y => out_mux_y );
+        
+        reg_y:entity work.register_en(behavior)
+        generic map (N => 16)
+        port map (clk => clk, enable => en_y , d => out_mux_y , q => out_reg_y );
+       
+        add_sub_y:entity work.register_en(behavior)
+        generic map (N => 16)
+        port map (op => op_y , input_a => out_reg_y , input_b => out_shift_x , result => out_add_sub_y );
+        
+        reg_oy:entity work.register_en(behavior)
+        generic map (N => 16)
+        port map (clk => clk, enable => en_out_trig , d => out_reg_y , q => seno_out);
+        
+        shift_y:entity work.deslocador(behavior)
+        generic map (N => 16, S => 5)
+        port map (dado_in => out_reg_y, shift_valor => out_reg_i , dado_out => out_shift_y);
 
 end architecture structure;
