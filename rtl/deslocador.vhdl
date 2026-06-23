@@ -2,8 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
--- Deslocador Aritmético para a Direita
--- Desloca dado_in em shift_valor posições para a direita
+-- Deslocador AritmÃ©tico para a Direita
+-- Desloca dado_in em shift_valor posiÃ§Ãµes para a direita
 entity deslocador is
     generic(
         N : positive := 16;

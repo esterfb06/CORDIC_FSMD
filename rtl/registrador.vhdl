@@ -2,12 +2,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
--- Registrador parametriz·vel para N bits com controle de enable.
--- O registrador atualiza sua saÌda 'q' com o valor da entrada 'd' na borda de
+-- Registrador parametriz√°vel para N bits com controle de enable.
+-- O registrador atualiza sua sa√≠da 'q' com o valor da entrada 'd' na borda de
 -- subida do sinal 'clk', apenas quando 'enable' = '1'.
 entity register_en is
     generic(
-        N : positive := 16 -- Largura do registrador, pode ser ajustada conforme necess·rio
+        N : positive := 16 -- Largura do registrador, pode ser ajustada conforme necess√°rio
     );
     port(
         clk, enable : in  std_logic;

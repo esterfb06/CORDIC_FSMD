@@ -1,17 +1,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- Multiplexador 2:1 com entradas e saÌda de N bits.
--- A seleÁ„o È feita com base no sinal `sel`.
--- Se sel = '0', ent„o y = in_0; caso contr·rio, y = in_1.
+-- Multiplexador 2:1 com entradas e sa√≠da de N bits.
+-- A sele√ß√£o √© feita com base no sinal `sel`.
+-- Se sel = '0', ent√£o y = in_0; caso contr√°rio, y = in_1.
 entity mux_2to1 is
 	generic(
-		N : positive  -- n˙mero de bits das entradas e da saÌda
+		N : positive  -- n√∫mero de bits das entradas e da sa√≠da
 	);
 	port(
-		sel        : in  std_logic;                        -- sinal de seleÁ„o
+		sel        : in  std_logic;                        -- sinal de sele√ß√£o
 		in_0, in_1 : in  std_logic_vector(N - 1 downto 0); -- entradas do mux
-		y          : out std_logic_vector(N - 1 downto 0)  -- saÌda do mux
+		y          : out std_logic_vector(N - 1 downto 0)  -- sa√≠da do mux
 	);
 end mux_2to1;
 

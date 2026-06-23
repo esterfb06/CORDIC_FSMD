@@ -2,8 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
--- Somador/Subtrator parametrizável para N bits.
--- O sinal 'op' define a operação:
+-- Somador/Subtrator parametrizÃ¡vel para N bits.
+-- O sinal 'op' define a operaÃ§Ã£o:
 -- op = '0' -> result = a + b
 -- op = '1' -> result = a - b
 entity add_sub is
@@ -20,7 +20,7 @@ end add_sub;
 
 architecture behavior of add_sub is
 begin
-    -- Processo sensível às entradas e ao sinal de operação
+    -- Processo sensÃ­vel Ã s entradas e ao sinal de operaÃ§Ã£o
     process(input_a, input_b, op)
     begin
         if op = '0' then
