@@ -1,0 +1,31 @@
+{
+    "grupo": {
+        "nome": "02208A-Grupo-B",
+        "alunos": [
+          {"nome": "Ester de Freitas Brizolla", "matricula": "24207925"},
+          {"nome": "Eduardo Campos St Clair Smallwood", "matricula": "23104293"},
+	  {"nome": "Carlos Henrique D'Avila Carvalho", "matricula": "24100810"},
+	  {"nome": "Leonardo de Oliveira Santana", "matricula": "24200512"},
+	  {"nome": "Daniela Nascimento Romano", "matricula": "24202452"},
+	  {"nome": "Pedro Korosi Peres", "matricula": "24202599"},
+          {"nome": "Carolina Cardozo de Mesquita", "matricula": "25150364"}
+        ]
+    },
+    "quartus": {
+        "os": "Debian 13",
+        "versao": "25.1",
+        "fpga": {
+            "familia": "Cyclone IV E",
+            "dispositivo": "EP4CE40F29C7"
+        }
+    },
+    "utilizacao": {
+        "total combinational functions": 248,
+        "dedicated logic registers": 90,
+        "total pins": 52
+    },
+    "atraso": {
+        "Fmax": 159.3,
+        "unidade": "MHz"
+    }
+}
